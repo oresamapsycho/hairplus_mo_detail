@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Colorbond detail_MO </title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <style>
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: Top;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .all_wrap {
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+
+        .mobtn {
+            width: 250px;
+            height: 45px;
+            margin: 0 45%;
+        }
+
+        .mobtn a {
+            text-decoration: none;
+            color: rgb(149, 62, 207);
+            display: block;
+        }
+
+        .mobtn a .btn_text p {
+            display: block;
+            font-size: 15px;
+        }
+
+        .mobtn:hover a {
+            color: rgb(30, 103, 240);
+            transition-duration: 2s;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-button-next {
+            display: none;
+        }
+
+        .swiper-button-prev {
+            display: none;
+        }
+
+        .swiper-pagination {
+            display: none;
+        }
+
+        .onepage_slide {
+            position: relative;
+        }
+
+        .background-image {
+            margin: 0;
+        }
+
+        .swiper_slide_01 {
+            max-width: 100%;
+            position: absolute;
+            bottom: 13vw;
+        }
+
+        /* .slide_image_page {
+            max-width: 850px;
+            overflow-x: scroll;
+        }
+
+        .slide_image_page img {
+            height: 800px;
+        }*/
+
+        .swiper_slide_01 .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 80%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper_slide_01 img {
+            max-width: 100%;
+        }
+
+        /* 가로 스크롤 영역 세팅 - 시안에 맞춰서 계산 후 넣기
+	(stickyBox 높이값 계산법) : scrollImg width 3281 - evtContainer width : 638 + stickyCont height 766 + stickyContOut height 2838
+
+	scrollImg width : 3281  ( 638해상도 랜더링크기 ( 3281px ) )
+	stickyCont height : 766
+	stickyContOut height : 2838
+
+	
+	//변경해야 되는값 아래 
+
+	.evtContainer : max-width:1000px   <<  전체 컨텐츠 영역 넓이
+	.oyEvent_wrap .stickyBox .stickyCont { width: 1000px
+	.oyEvent_wrap .stickyBox .stickyContOut { width: 1000px
+	.stickyBox .stickyCont .scrollImg { width:3281px !important;
+
+
+	@media screen and (max-width:1000px){
+	scrollImg width : 3281 / 7.5 
+	\.stickyBox .stickyCont .scrollImg {width:437.4666vw !important;}
+
+
+*/
+        * {
+            vertical-align: top;
+            margin: 0;
+            padding: 0;
+        }
+
+        .evtContainer {
+            overflow: hidden;
+            width: 100%; 
+            margin: 0 auto !important;
+        }
+
+        .oyEvent_wrap .evtCont {
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+
+        .oyEvent_wrap .stickyBox,
+        .oyEvent_wrap .stickyBox .stickyCont {
+            -webkit-overflow-scrolling: touch;
+            -khtml-transition: all .3s;
+            -moz-transition: all .3s;
+            -ms-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .oyEvent_wrap .stickyBox .stickyCont {
+            width: 850px;
+            -webkit-transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            overflow: hidden;
+        }
+
+        .oyEvent_wrap .stickyBox .stickyCont .scrollImg {
+            display: flex;
+            flex-wrap: nowrap;
+            will-change: transform;
+        }
+
+        .oyEvent_wrap .stickyBox .stickyContOut {
+            width: 100%;
+        }
+
+        .stickyBox .stickyCont .scrollImg {
+            width: 3500px !important;
+        }
+
+        .oyEvent_wrap img {
+            width: 100%;
+            display: block;
+        }
+
+        .banner_line {
+            display: none;
+            width: 100%;
+            height: 35px;
+            background-color: #80a5f5;
+            z-index: 1500;
+            position: absolute;
+        }
+
+        .linebtn_text {
+            text-align: center;
+            font-size: 0.7vw;
+            color: white;
+            padding: 10px;
+        }
+
+        .detail_image {
+            position: relative;
+            display: none; 
+        }
+
+        .detail_image2 {
+            position: fixed;
+            top: 0%;
+            z-index: -999;
+            display: none; 
+        }
+
+        .detail_image2 img {
+            width: 100%; 
+            display:none; 
+        }
+
+        .detail_image img {
+            position: absolute;
+            width: 100%;
+            display: none; 
+        }
+        
+        .header_image{
+            position: fixed;
+            z-index: 8; 
+            top: -2%; 
+            left: 11%;
+            background-color: white;
+            padding-top: 35px;
+            display: none; 
+        }
+
+        .header_image img {
+            width: 100%; 
+            display: none; 
+        }
+
+        .all_wrap {
+            display: block;
+            margin: 0 auto;
+            position: absolute;
+            z-index: 5;
+            /* left: 27%; */
+            top: 9vw;
+            width: 100%; 
+            /* overflow-y: scroll;
+            -ms-overflow-style: none;
+            scrollbar-height: none; */
+        }
+
+        .wrap {
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+            scrollbar-height: none;
+        }
+
+        .wrap::-webkit-scrollbar {
+            display: none;
+            /* 크롬, 사파리, 오페라, 엣지 */
+        }
+
+        /*swiper*/
+
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+
+</head>
+
+<body style="padding: 0; margin: 0;">
+
+
+    <div class="banner_line">
+        <div class="linebtn_text">
+            <p> 신규회원 50% 할인 혜택 제공</p>
+        </div>
+    </div>
+
+    <div class="all_wrap">
+
+        <div class="wrap">
+
+            <div class="mobtn">
+                <a href="#">
+                    <div class="btn_text">
+                        <p> PC 보기 </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="onepage_slide">
+
+                <div class="detail_video">
+                    <video src="src/@230912_colorbond_v04.mp4" autoplay muted loop></video>
+                </div>
+
+                <div class="page">
+
+                    <div class="background-image">
+                        <img src="src/detail/detail_01.jpg" alt="Image1">
+                    </div>
+
+                    <div class="swiper_slide_01">
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"> <img src="src/detail/detail_01_slide/Slide01_01.png"
+                                        alt="이미지1"></div>
+                                <div class="swiper-slide"> <img src="src/detail/detail_01_slide/Slide01_02.jpg"
+                                        alt="이미지2"></div>
+                                <div class="swiper-slide"> <img src="src/detail/detail_01_slide/Slide01_03.png"
+                                        alt="이미지3"></div>
+                                <div class="swiper-slide"> <img src="src/detail/detail_01_slide/Slide01_04.jpg"
+                                        alt="이미지4"></div>
+                                <div class="swiper-slide"> <img src="src/detail/detail_01_slide/Slide01_01.png"
+                                        alt="이미지5"></div>
+                                <div class="swiper-slide"> <img src="src/detail/detail_01_slide/Slide01_02.jpg"
+                                        alt="이미지6"></div>
+                                <div class="swiper-slide"> <img src="src/detail/detail_01_slide/Slide01_03.png"
+                                        alt="이미지7"></div>
+                                <div class="swiper-slide"> <img src="src/detail/detail_01_slide/Slide01_04.jpg"
+                                        alt="이미지8"></div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="page">
+                <div> <img src="src/detail/detail_02.jpg" alt=""></div>
+                <div> <img src="src/detail/detail_03.jpg" alt=""></div>
+            </div>
+
+            <div class="content_box">
+                <div class="brandPageWarp">
+                    <div class="evtContainer">
+                        <div class="oyEvent_wrap">
+                            <div class="evtCont">
+                                <div class="imgBox">
+                                    <div class="stickyBox">
+                                        <div class="stickyCont">
+                                            <div class="scrollImg">
+                                                <img src="src/detail/detail_04.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="stickyContOut">
+                                            <img src="src/detail/detail_05.jpg" alt="">
+                                            <img src="src/detail/detail_06.jpg" alt="">
+                                            <img src="src/detail/detail_07.jpg" alt="">
+                                            <img src="src/detail/detail_08.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page">
+                <div> <img src="src/detail/detail_09.gif" alt=""></div>
+                <div> <img src="src/detail/detail_10.jpg" alt=""></div>
+                <div> <img src="src/detail/detail_11.jpg" alt=""></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="header_image"> 
+        <img src="src/header.jpg" alt="header">
+    </div>
+
+    <div class="detail_image2">
+        <img src="src/230824_자사몰-리뉴얼_개발업체-전달_시안.jpg" alt="detail">
+    </div>
+
+
+    <div class="detail_image">
+        <img src="src/230824_자사몰-리뉴얼_개발업체-전달_시안.jpg" alt="detail">
+    </div>
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+    <script>
+        /*stickyScroll*/
+
+        function stickyScroll() {
+            var $window = $(window);
+            var $boxes = $('.stickyBox');
+
+            // init
+            $boxes.each(function (index, box) {
+                var $box = $(box);
+                var $cont = $box.find('.stickyCont');
+                var $img = $box.find('.scrollImg');
+                var $contOut = $box.find('.stickyContOut');
+                var winWidth = $window.outerWidth();
+                var imgWidth = $img.outerWidth();
+                var contHeight = $cont.outerHeight();
+                var contOutHeight = $contOut.length > 0 ? $contOut.outerHeight() : 0;
+                var boxHeight = (imgWidth - $('.evtContainer').outerWidth()) + contHeight + contOutHeight + 'px';
+
+
+                $box.css({
+                    'position': 'relative',
+                    'height': boxHeight
+                });
+
+                if ($contOut.length > 0) {
+                    $contOut.css({
+                        'position': 'absolute',
+                        'top': contHeight
+                    });
+                }
+            });
+
+
+            $window.on('scroll', function () {
+                var scrollTop = $window.scrollTop();
+
+                $boxes.each(function (index, box) {
+                    var $box = $(box);
+                    var $cont = $box.find('.stickyCont');
+                    var $img = $box.find('.scrollImg');
+                    var $contOut = $box.find('.stickyContOut');
+                    var boxTop = $box.offset().top;
+                    var winWidth = $window.outerWidth();
+                    var imgWidth = $img.outerWidth();
+                    var distance = imgWidth - $('.evtContainer').outerWidth(); // 이동할 거리 (이미지너비 - 컨텐츠 너비)
+                    var hScrollArea = scrollTop > boxTop && scrollTop <= boxTop + distance; if (hScrollArea) { // distance 영역 var
+                        space = scrollTop - boxTop; $cont.css({ 'position': 'fixed', 'top': 0, 'bottom': 'inherit' });
+                        $contOut.css({ 'position': 'fixed', 'top': $cont.outerHeight(), 'bottom': 'inherit' });
+                        $img.css('transform', 'translateX(-' + space + 'px)');
+                    } else {
+                        if (scrollTop <= boxTop) {
+                            $cont.css({ 'position': 'absolute', 'top': '0', 'bottom': 'inherit' }); $contOut.css({
+                                'position'
+                                    : 'absolute', 'top': $cont.outerHeight()
+                            }); $img.css('transform', 'translateX(0)');
+                        } if (scrollTop > boxTop
+                        ) {
+                            $cont.css({
+                                'position': 'absolute',
+                                'top': 'inherit',
+                                'bottom': $contOut.outerHeight()
+                            });
+
+                            $contOut.css({
+                                'position': 'absolute',
+                                'top': 'inherit',
+                                'bottom': 0
+                            });
+
+                            $img.css('transform', 'translateX(-' + distance + 'px)');
+                        }
+                    }
+                });
+            });
+
+        }
+
+        stickyScroll();
+
+        $(window).on("resize", function () { stickyScroll() });
+
+
+        var swiper = new Swiper(".swiper_slide_01 .mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnlnteraction: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        /* var swiper = new Swiper(".swiper_slide_02 .mySwiper", {
+            slidesPerView: 1,
+            pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+        },
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        },
+        }); */
+
+
+    </script>
+
+</body>
+
+</html>
